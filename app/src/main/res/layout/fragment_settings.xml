@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="設定"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Nudge Toggle -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchNudge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ナッジ通知を有効にする"
+            android:textSize="16sp"
+            android:checked="true"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Control Group Toggle -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchControlGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="対照群モード（通知なし）"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Participant ID -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="被験者ID"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editParticipantId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Export Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonExport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="データをCSVでエクスポート"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- App Info -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nimura v1.0"
+            android:textSize="12sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="瞬き検出×姿勢推定による健康推進アプリ"
+            android:textSize="12sp"
+            android:textColor="#AAAAAA" />
+
+    </LinearLayout>
+</ScrollView>
