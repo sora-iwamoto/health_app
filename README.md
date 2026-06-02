@@ -350,21 +350,39 @@ app/src/main/java/com/nimura/app/
 
 ### 必要環境
 
-- Android Studio
-- JDK 17
+- Android Studio (Arctic Fox 以降)
+- JDK 17（Android Studioにバンドル済み）
 - Android SDK (API 34)
 
-### ビルド
+### セットアップ手順
+
+1. リポジトリをclone
+   ```bash
+   git clone https://github.com/sora-iwamoto/health_app.git
+   ```
+
+2. Android Studioでプロジェクトを開く（`File` → `Open` → cloneしたフォルダ）
+
+3. **Windows PCの場合:** `gradle.properties` を開き、以下の行を削除またはコメントアウトする
+   ```
+   # この行はMac専用のJDKパスなので、Windowsでは削除する
+   org.gradle.java.home=/opt/homebrew/Cellar/openjdk@17/17.0.19/libexec/openjdk.jdk/Contents/Home
+   ```
+   Android StudioにはJDK 17がバンドルされているため、この行がなければ自動的に適切なJDKが使用される。
+
+4. **Macの場合:** JDK 17がインストールされていれば変更不要。JDK 18以上のみの場合は `gradle.properties` のパスを自分のJDK 17のパスに合わせる。
+
+5. Gradle Syncが完了するまで待つ
+
+6. 実機をUSB接続し、Android Studioの「Run」ボタンでインストール
+
+### コマンドラインビルド
 
 ```bash
 ./gradlew assembleDebug
 ```
 
 APKの出力先: `app/build/outputs/apk/debug/app-debug.apk`
-
-### 実機へのインストール
-
-Android Studioの「Run」ボタン、または:
 
 ```bash
 adb install app/build/outputs/apk/debug/app-debug.apk
